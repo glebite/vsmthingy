@@ -1,20 +1,21 @@
 import dearpygui.dearpygui as dpg
 
 
+breakpoint()
 # create some items in the window
-with dpg.window():
+with dpg.window(label="Animation", width=500, height=500):
     # create three buttons and a progress bar
     button1 = dpg.add_button(label="Button 1")
-    button2 = dpg.add_button(label="Button 2")
-    button3 = dpg.add_button(label="Button 3")
-    progress_bar = dpg.add_progress_bar()
+    # button2 = dpg.add_button(label="Button 2")
+    # button3 = dpg.add_button(label="Button 3")
+    # progress_bar = dpg.add_progress_bar()
 
-    # place the buttons side by side using the add_same_line function
-    dpg.add_same_line(spacing=50)
-    dpg.add_text("Animation:")
-    animation_button1 = dpg.add_button(label=" ", width=30)
-    animation_button2 = dpg.add_button(label=" ", width=30)
-    animation_button3 = dpg.add_button(label=" ", width=30)
+    # # place the buttons side by side using the add_same_line function
+    # dpg.add_same_line(spacing=50)
+    # dpg.add_text("Animation:")
+    # animation_button1 = dpg.add_button(label=" ", width=30)
+    # animation_button2 = dpg.add_button(label=" ", width=30)
+    # animation_button3 = dpg.add_button(label=" ", width=30)
 
 
 # define a function that updates the animation buttons and progress bar
@@ -40,6 +41,6 @@ def update_animation():
 with dpg.timer(0.1, callback=update_animation, user_data=None):
     pass
 
-
+dpg.show_viewport()
 # start the Dear PyGui event loop
 dpg.start_dearpygui()
